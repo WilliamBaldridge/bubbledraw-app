@@ -55,7 +55,12 @@ public class BubblePanel extends JPanel {
         }
 
         public void mouseWheelMoved(MouseWheelEvent e) {
-            size += e.getUnitsToScroll();
+
+            if (size > 3) {
+                size += e.getUnitsToScroll();
+            } else {
+                size = 3;
+            }
         }
 
     }
